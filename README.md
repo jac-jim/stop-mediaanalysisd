@@ -2,7 +2,7 @@
 How to stop `mediaanalysisd`?  This mystery service has been terrorizing users for nearly a decade, wasting electricity and possibly SSD write life.  Please keep your *System Integrity Protection* enabled on your **macOS** machines, because classic process control techniques exist to handle this situation thanks to UNIX principles.  These instructions show how to setup a safe way to stop `mediaanalysisd` from wasting your system resources.
 
 ## Installation
-Open the **Terminal** app via **Finder**, and follow these instructions:
+Open the **Terminal** app via **Finder**, and follow these instructions for each user on your system:
 
 1. Make sure the contents of the `stop-mediaanalysisd.sh` *BASH* script are in your home directory.
 2. Make the script executable by running `chmod 755 ~/stop-mediaanalysisd.sh`.
@@ -22,3 +22,4 @@ Every minute, the script will run, search for all process ID's that belong to `m
 Additionally, the script re-prioritizes the paused process to have the lowest runtime priority for scheduling by the operating system.
 
 This approach starves the process from doing whatever it is that it does.  Perhaps some day when *Apple* is more transparent about what exactly `mediaanalysisd` is doing and offers a proper configuration interface, we can let it run.
+
