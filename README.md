@@ -1,5 +1,5 @@
 # Stop `mediaanalysisd`
-Please keep your *System Integrity Protection* enabled on your **macOS** machines, because classic process control techniques exist to handle this situation thanks to UNIX principles.
+How to stop `mediaanalysisd`?  This mystery service has been terrorizing users for nearly a decade, wasting electricity and possibly SSD write life.  Please keep your *System Integrity Protection* enabled on your **macOS** machines, because classic process control techniques exist to handle this situation thanks to UNIX principles.  These instructions show how to setup a safe way to stop `mediaanalysisd` from wasting your system resources.
 
 ## Installation
 Open the **Terminal** app via **Finder**, and follow these instructions:
