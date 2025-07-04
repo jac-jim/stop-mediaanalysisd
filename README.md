@@ -6,10 +6,12 @@ Open the **Terminal** app via **Finder**, and follow these instructions:
 
 1. Make sure the contents of the `stop-mediaanalysisd.sh` *BASH* script are in your home directory.
 2. Make the script executable by running `chmod 755 ~/stop-mediaanalysisd.sh`.
-3. Run `crontab -e` and add the following: 
+3. Run `crontab -e` and add the following, substituting `<your-user-name>` with your user handle on your system: 
 ```
 * * * * * /Users/<your-user-name>/stop-mediaanalysisd.sh >> /Users/<your-user-name>/stop-mediaanalysisd.log 2>&1
 ```
+If your username is like `Joe Mac` then you need to `/Users/Joe\ Mac/stop-mediaanalysisd.sh` notice the `\` escape character to permit the space character.  If you need help finding your user name, then try `ls /Users` and it will show all of the home directories on your system.
+
 4. Press the `ESC` key on your keyboard, carefully enter the string `:wq` and press `Enter` (or `Return`) on your keyboard.  The **Terminal** window should restore back to showing the commands you ran previously, and you'll see a message saying the crontab was installed.
 
 If you get stuck on **Step 4**, then please look up a YouTube video of how to use `crontab -e`.
