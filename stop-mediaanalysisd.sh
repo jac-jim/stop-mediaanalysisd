@@ -20,7 +20,7 @@ for PID in $PIDS; do
             #echo "Renicing process with PID: $PID"
             # Renice the process
             renice 20 "$PID"
-        else
+        #else
             #echo "Failed to stop process with PID: $PID"
         fi
     else
