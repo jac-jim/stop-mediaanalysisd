@@ -5,7 +5,7 @@
 PROCESS_NAME="mediaanalysisd"
 
 # Find all PIDs matching the process name
-PIDS=$(pgrep -f "$PROCESS_NAME")
+PIDS=$(pgrep -U $UID -f "$PROCESS_NAME")
 
 # Iterate through the list of PIDs
 for PID in $PIDS; do
@@ -20,8 +20,8 @@ for PID in $PIDS; do
             #echo "Renicing process with PID: $PID"
             # Renice the process
             renice 20 "$PID"
-        #else
-            #echo "Failed to stop process with PID: $PID"
+        else
+            echo "Failed to stop process with PID: $PID"
         fi
     else
         echo "No valid PID found for process name: $PROCESS_NAME"
