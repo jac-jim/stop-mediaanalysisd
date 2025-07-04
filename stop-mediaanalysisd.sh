@@ -21,7 +21,7 @@ for PID in $PIDS; do
             # Renice the process
             renice 20 "$PID"
         else
-            echo "Failed to stop process with PID: $PID"
+            #echo "Failed to stop process with PID: $PID"
         fi
     else
         echo "No valid PID found for process name: $PROCESS_NAME"
