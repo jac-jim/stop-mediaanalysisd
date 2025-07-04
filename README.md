@@ -19,9 +19,11 @@ If you get stuck on **Step 4**, then please look up a YouTube video of how to us
 A log file is created, called `stop-mediaanalysisd.log`.  Ideally this file remains empty.  If you find a problem, open an Issue in the GitHub repository here.
 
 ## Explanation
-Every minute, the script will run, search for all process ID's that belong to `mediaanalysisd`, and `STOP` them.  This is unlike killing them.  Instead, the process is paused.  Running this script every minute makes sure the process stays paused and finds the new process ID incase it has been restarted.
+The `crontab` is a list of jobs that should run periodically, and five astericks means run the job every minute.  
 
-Additionally, the script re-prioritizes the paused process to have the lowest runtime priority for scheduling by the operating system.
+Every minute, the script will run, search for all process ID's that belong to `mediaanalysisd`, and `STOP` them.  This is unlike killing them.  Instead, the processes are paused.  Running this script every minute finds the new process ID incase it has been restarted.
+
+Additionally, the script re-prioritizes the paused process to have the lowest runtime priority (of `20`, see `man renice`) for scheduling by the operating system.
 
 This approach starves the process from doing whatever it is that it does.  Perhaps some day when *Apple* is more transparent about what exactly `mediaanalysisd` is doing and offers a proper configuration interface, we can let it run.
 
