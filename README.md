@@ -16,6 +16,9 @@ If your username is like `Joe Mac` then you need to `/Users/Joe\ Mac/stop-mediaa
 
 If you get stuck on **Step 4**, then please look up a YouTube video of how to use `crontab -e`.
 
+### Log File
+A log file is created, called `stop-mediaanalysisd.log`.  Ideally this file remains empty.  If you find a problem, open an Issue in the GitHub repository here.
+
 ## Explanation
 Every minute, the script will run, search for all process ID's that belong to `mediaanalysisd`, and `STOP` them.  This is unlike killing them.  Instead, the process is paused.  Running this script every minute makes sure the process stays paused and finds the new process ID incase it has been restarted.
 
